@@ -31,6 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
+  const lastUpdated = document.querySelector('[data-last-updated]');
+  if (lastUpdated) {
+    const lastModified = new Date(document.lastModified);
+    if (Number.isNaN(lastModified.getTime())) {
+      lastUpdated.textContent = '—';
+    } else {
+      lastUpdated.textContent = lastModified.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    }
+  }
+
   const contactForm = document.querySelector('#contact-form');
   if (contactForm instanceof HTMLFormElement) {
     contactForm.addEventListener('submit', (event) => {
