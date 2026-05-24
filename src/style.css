@@ -40,6 +40,11 @@ p {
   margin-bottom: 15px;
 }
 
+.accent-text {
+  color: #3563E9;
+  font-weight: 600;
+}
+
 .section-title {
   font-size: 2.2rem;
   margin-bottom: 40px;
